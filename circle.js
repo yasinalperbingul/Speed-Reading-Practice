@@ -2,8 +2,8 @@ const canvas = document.getElementById('myCanvas');
 const context = canvas.getContext('2d');
 
 var circle = {
-    x: 100,
-    y: 100,
+    x: canvas.width/6,
+    y: canvas.height/6,
     radius :10
 }
 
