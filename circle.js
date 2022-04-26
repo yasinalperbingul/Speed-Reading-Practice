@@ -71,11 +71,13 @@ function stop() {
 function speedUp(){
     delayInMilliseconds = delayInMilliseconds - 50;
     clearInterval(interval);
+    circle.press = 0;
     start();
 }
 
 function speedDown(){
     delayInMilliseconds = delayInMilliseconds + 50;
     clearInterval(interval);
+    circle.press = 0;
     start();
 }
