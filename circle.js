@@ -1,5 +1,9 @@
 const canvas = document.getElementById('myCanvas');
 const context = canvas.getContext('2d');
+var seconds = 00; 
+var tens = 00; 
+var appendTens = document.getElementById("tens")
+var appendSeconds = document.getElementById("seconds")
 
 var circle = {
     x: canvas.width/6,
@@ -10,10 +14,14 @@ var circle = {
 
 var delayInMilliseconds = 300;
 function start() {
+    tens = "00";
+  	seconds = "00";
+    appendTens.innerHTML = tens;
+  	appendSeconds.innerHTML = seconds;
     circle.press += 1;
     if(circle.press == 1){
         var i=0;
-        interval = setInterval(function() {
+        interval1 = setInterval(function() {
             myArray = stateCircle(i);
             circle.x = myArray[0];
             circle.y = myArray[1];
@@ -29,6 +37,8 @@ function start() {
             }
             console.log(delayInMilliseconds);
         }, delayInMilliseconds);
+
+        interval2 = setInterval(startTimer,10);
     }
    
 }
@@ -64,20 +74,50 @@ function stateCircle(state){
 }
 
 function stop() {
-    clearInterval(interval);
+    clearInterval(interval1);
+    clearInterval(interval2);
     circle.press = 0;
 }
 
 function speedUp(){
     delayInMilliseconds = delayInMilliseconds - 50;
-    clearInterval(interval);
+    clearInterval(interval1);
+    clearInterval(interval2);
     circle.press = 0;
     start();
 }
 
 function speedDown(){
     delayInMilliseconds = delayInMilliseconds + 50;
-    clearInterval(interval);
+    clearInterval(interval1);
+    clearInterval(interval2);
     circle.press = 0;
     start();
 }
+
+function startTimer () {
+    tens++; 
+    
+    if(tens <= 9){
+      appendTens.innerHTML = "0" + tens;
+    }
+    
+    if (tens > 9){
+      appendTens.innerHTML = tens;
+      
+    } 
+    
+    if (tens > 99) {
+      console.log("seconds");
+      seconds++;
+      appendSeconds.innerHTML = "0" + seconds;
+      tens = 0;
+      appendTens.innerHTML = "0" + 0;
+    }
+    
+    if (seconds > 9){
+      appendSeconds.innerHTML = seconds;
+    }
+  
+  }
+  

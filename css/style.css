@@ -4,3 +4,11 @@ canvas { background: #eee; }
     border: solid 1px blue;  
     width: 100%;
   }
+
+  #seconds, #tens{
+    font-size:3em;
+  }
+
+  #db{
+    font-size:2em;
+  }

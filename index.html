@@ -24,26 +24,43 @@
     </nav>
     </div>
    
+    <!--Starting Content-->
+    <div class="row">
+      <div class="col offset-md-1 mt-2">
+        <h3 style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; margin-top: 10px;">Speed Reading Practise</h3>
+      </div>
+    </div>
 
-    <!--Content-->
+    <div class="row">
+      <div class="col offset-md-1">
+        <p  style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; color:gray;">Use the Start button to start practice! Have fun and keep reading:)</p>
+      </div>
+    </div>
+    <!--Main Content-->
     <div class="container">
         <div class="row">
-          <div class="col-lg-6 col-sm-12 offset-md-1 mt-5">
-              <canvas class="col" id="myCanvas" width="600" height="600"></canvas>
+          <div class="col-lg-6 col-sm-12 mt-4">
+              <canvas class="col" id="myCanvas" width="600" height="600" style="border:1px solid #b2b2b2;"></canvas>
           </div>
-          <div class="col-lg-4 col-md-12 ms-3">
+          <div class="col-lg-5 col-md-12 ms-3">
             <div class="row mt-5">
-              <div class="col-lg-12 col-md m-3">
-                <button onclick="start()" type="button" class="btn btn-outline-success"> Start </button>
+              <div class="col-md m-3">
+                <button onclick="start()" type="button" class="btn btn-outline-success"> <small>Start</small> </button>
               </div>
-              <div class="col-lg-12 col-md m-3">
-                <button onclick="speedUp()" type="button" class="btn btn-outline-info"> Speed-Up </button>
+              <div class="col-md  m-3">
+                <button onclick="speedUp()" type="button" class="btn btn-outline-info"> <small>Speed +</small> </button>
               </div>
-              <div class="col-lg-12 col-md m-3">
-                <button onclick="speedDown()" type="button" class="btn btn-outline-warning"> Speed-Down </button>
+              <div class="col-md  m-3">
+                <button onclick="speedDown()" type="button" class="btn btn-outline-warning"> <small>Speed -</small> </button>
               </div>
-              <div class="col-lg-12 col-md m-3">
-                <button onclick="stop()" type="button" class="btn btn-outline-danger"> Stop </button>
+              <div class="col-md  m-3">
+                <button onclick="stop()" type="button" class="btn btn-outline-danger"> <small>Stop</small></button>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md mt-5">
+                <p style="text-align: center; background-color:aliceblue; border-radius: 25px;"><span id="seconds">00</span> <span id="db">:</span><span id="tens">00</span></p>
               </div>
             </div>
           </div>
